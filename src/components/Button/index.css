@@ -1,0 +1,14 @@
+.button{
+  width: 120px;
+  height: 40px;
+  background-color:#44ba42;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  border: none;
+  outline: none;
+}
+
+.button:active{
+  opacity: 0.4;
+}
