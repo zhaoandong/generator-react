@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --hot --inline webpack.config.js  && standard"
+    "dev": "webpack-dev-server --hot --inline build/webpack.config.js  && standard",
+    "fe": "node build/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -35,7 +36,10 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "clean-webpack-plugin": "^0.1.19",
+    "extract-text-webpack-plugin": "^2.1.2",
     "fsevents": "^1.1.2",
-    "react": "^15.6.1"
+    "react": "^15.6.1",
+    "webpack-manifest-plugin": "^2.0.3"
   }
 }
