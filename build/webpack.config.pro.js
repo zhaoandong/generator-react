@@ -47,9 +47,14 @@ module.exports = {
         }
       },
       {
-        test: /\.(css)$/,
+        test: /\.scss$/,
         use: ExtractTextPlugin.extract({
-          use: ['css-loader?modules'],
+          use: [{
+            loader: 'css-loader?modules'
+          }, {
+            loader: 'sass-loader'
+          }],
+            // 在开发环境使用 style-loader
           fallback: 'style-loader'
         })
       },
@@ -59,7 +64,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: `//static.qiongqi.tech/resource/[name]/[name].[ext]`
+              name: `/resource/[name]/[name].[ext]`
             }
           }
         ],

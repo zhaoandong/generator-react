@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './index.css'
+import styles from './index.scss'
 import classNames from 'classnames/bind'
 import { connect } from 'react-redux'
 
@@ -10,9 +10,9 @@ let cx = classNames.bind(styles)
 class Home extends React.Component {
   render () {
     return (
-      <div>
+      <div className={cx(styles.con)}>
         <h2 className={cx(styles.f1)}>home</h2>
-        <p>点击按钮触发action</p>
+        <p className={cx(styles.red)}>点击按钮触发action</p>
         <Button />
         <p>num:{this.props.value}</p>
       </div>

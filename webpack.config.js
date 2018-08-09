@@ -1,5 +1,6 @@
 var path = require('path')
 
+console.log(213123)
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -18,8 +19,8 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader?modules'
+        test: /\.(scss|css)$/,
+        use: [ 'style-loader', 'css-loader?modules', 'sass-loader']
       }
     ]
   }

@@ -19,21 +19,14 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader?modules'
-      },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'webpack-px-to-rem',
-            query: {
-              basePx: 100,
-              min: 1,
-              floatWidth: 3
-            }
-          }
-        ]
+        test: /\.(scss|css)$/,
+        use: [{
+          loader: 'style-loader' // 将 JS 字符串生成为 style 节点
+        }, {
+          loader: 'css-loader?modules' // 将 CSS 转化成 CommonJS 模块
+        }, {
+          loader: 'sass-loader' // 将 Sass 编译成 CSS
+        }]
       },
       {
         test: /.(png|jpg|gif)$/i,

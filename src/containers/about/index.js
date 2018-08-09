@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames/bind'
 
-import styles from './index.css'
+import styles from './index.scss'
 
 let cx = classNames.bind(styles)
 

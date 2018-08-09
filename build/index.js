@@ -6,7 +6,7 @@ let config
 config = require('./webpack.config.pro.js')
 
 if (isdev) {
-  config = require('./webpack.config.dev.js')
+  config = require('./webpack.config.js')
 }
 
 let compiler = webpack(config)
