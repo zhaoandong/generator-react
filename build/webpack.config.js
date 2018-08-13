@@ -4,7 +4,7 @@ var workingDir = process.cwd()
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'index.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, './dist'),
     publicPath: '/assets/'
   },
@@ -12,11 +12,11 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['react', 'es2015']
-        }
+        loader: 'ts-loader',
+        exclude: /node_modules/
+        // query: {
+        //   presets: ['react', 'es2015']
+        // }
       },
       {
         test: /\.(scss|css)$/,

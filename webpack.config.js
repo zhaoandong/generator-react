@@ -1,26 +1,21 @@
-var path = require('path')
 
-console.log(213123)
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/test.ts',
   output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, './dist'),
+    filename: 'bundle.js',
     publicPath: '/assets/'
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['react', 'es2015']
-        }
+        test: /\.ts$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/
       },
       {
         test: /\.(scss|css)$/,
-        use: [ 'style-loader', 'css-loader?modules', 'sass-loader']
+        use: ['style-loader', 'css-loader?modules', 'sass-loader']
       }
     ]
   }
